@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Redis Messenger</title>
+    <link rel="icon" href="https://www.svgrepo.com/show/303460/redis-logo.svg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url('https://static.vecteezy.com/system/resources/previews/002/471/290/non_2x/group-men-using-smartphone-sending-message-sms-people-and-gadgets-vector.jpg');
+        height:50vh;
+        font-family: sans-serif;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        overflow: hidden;
+    }
+
+    .loginBox {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        min-height: 200px;
+        background: #545454b7;
+        border-radius: 1000px;
+        padding: 50px;
+        box-sizing: border-box
+    }
+
+    .user {
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 20px
+    }
+
+    h2 {
+        margin: 0;
+        padding: 0 0 20px;
+        color: #ffee00;
+        text-align: center
+    }
+
+    .loginBox input {
+        width: 100%;
+        margin-bottom: 20px
+    }
+
+    .loginBox input[type="text"] {
+        border: none;
+        border-bottom: 2px solid #000000;
+        outline: none;
+        height: 40px;
+        color: rgb(255, 255, 255);
+        background:rgba(29, 37, 28, 0.493);
+        font-size: 18px;
+    
+        padding-left: 20px;
+        box-sizing: border-box
+    }
+
+    .loginBox input[type="text"]:hover {
+        color: rgb(145, 255, 0);
+        border: 1px solid rgb(145, 255, 0);
+        box-shadow: 0 0 5px rgba(158, 255, 2, 0.788), 0 0 10px rgba(158, 255, 2, 0.788), 0 0 15px rgba(158, 255, 2, 0.788), 0 2px 0 rgb(150, 70, 70)
+    }
+</style>
+
+<body>
+    <style>
+        h1 {text-align: center;}
+        </style>
+        </head>
+        <body>
+
+        <h1>Welcome to Redis Messenger</h1>
+        
+    <div class="loginBox" style="text-align: center;"> <img class="user"
+            src="https://media.istockphoto.com/vectors/business-user-icon-vector-id646883990?s=612x612" height="100px"
+            width="100px">
+        <h2>LOG IN</h2>
+        <form action="/message">
+            <input id="username" type="text" name="username" placeholder="Username"  />
+
+            <br />
+            <br />
+            <button class="btn btn-warning" type="submit">Enter</button>
+        </form>
+</body>
+</html>

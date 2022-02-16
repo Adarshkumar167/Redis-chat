@@ -9,17 +9,36 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <style>
-body {
+
+.chatbox {
+        position:absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        min-height: 300px;
+        background: #621ec93b;
+        border-radius: 1000px;
+        padding: 0px;
+        box-sizing: border-box
+        }
+        h3 {
+            font-size: 25px;
+            color: rgb(0, 0, 0);
+        }
+
+    body {
     margin: 0;
     padding: 0;
-    background-color: rgb(214, 236, 10);
+    background-image:url(https://about.fb.com/wp-content/uploads/2021/04/NRP_Private-Messaging_Header.jpg?fit=1921%2C1081);
     height: 100vh;
     font-family: sans-serif;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    overflow: hidden;
-}
+    background-repeat: repeat;
+    background-position: bottom;
+    overflow: visible;
+  }
+
 </style>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -37,24 +56,27 @@ body {
           </div>
         </div>
       </nav>
-      <div class="container">
-        <div class="row">
-          <div class="col" style="background-color: rgb(255, 102, 0);"class="header">
-            <br />
-            <h1 style="text-align: center; font-size: 35px;">Redis Messenger</h1>
-            <br />
-            <div style="text-align: center;" id="messages">
-                <input id="message" type="text" name="message" placeholder="Message" />
-                <br />
-                <br />
-                <button class="btn btn-warning" style="background-color: rgb(233, 212, 96);"
-                    onClick="emitData()">Send</button>
-                    <br />
-                    <br />
-          </div>
-        </div>
 
-    <div id="joined"></div>
+  <div class="container">
+  <div class="row align-items-start">
+    <div id="joined" class="col">
+      <br/>
+    </div>
+  </div>
+
+
+    <div class="chatbox" style="text-align: center;"> <img class="user">
+    <h1 style="text-align: center; font-size: 35px;">Redis Messenger</h1>
+    <br />
+    <div style="text-align: center;" id="messages">
+        <input id="message" type="text" name="message" placeholder="Message" />
+        <br />
+        <br />
+        <button class="btn btn-warning" style="background-color: rgb(206, 183, 50);"
+            onClick="emitData()">Send</button>
+      <br />
+      <br />
+  </form>
 
 </body>
 
@@ -77,8 +99,8 @@ body {
     });
 
     socket.on("joined", username => {
-        const element = document.createElement("h5");
-        element.innerText = `${username} has joined`;
+        const element = document.createElement("h3");
+        element.innerText = `${username} is in the chat`;
 
         document.querySelector("#joined").appendChild(element);
     });
